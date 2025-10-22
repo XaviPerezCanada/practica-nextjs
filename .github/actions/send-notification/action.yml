@@ -1,0 +1,20 @@
+name: Send notification email
+description: Sends an email with workflow results
+inputs:
+  to:
+    description: "Destination email address"
+    required: true
+  workflow:
+    description: "Workflow name"
+    required: true
+  linter:
+    required: true
+  cypress:
+    required: true
+  badge:
+    required: true
+  deploy:
+    required: true
+runs:
+  using: "node20"
+  main: "index.js"

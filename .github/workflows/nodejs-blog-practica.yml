@@ -99,3 +99,23 @@ jobs:
           vercel-project-id: ${{ secrets.PROJECT_ID }}
           working-directory: ./
           prod: true
+          
+  notification_job:
+    name: Send workflow result email
+    needs: [linter_job, cypress_job, add_badge_job, deploy_job]
+    runs-on: ubuntu-latest
+    if: always()
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Send workflow result notification
+        uses: ./.github/actions/send-notification
+        with:
+          to: ${{ secrets.USER_EMAIL }}
+          workflow: nodejs-blog-practica
+          linter: ${{ needs.linter_job.result }}
+          cypress: ${{ needs.cypress_job.result }}
+          badge: ${{ needs.add_badge_job.result }}
+          deploy: ${{ needs.deploy_job.result }}
