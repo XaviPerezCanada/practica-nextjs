@@ -53,7 +53,7 @@ Si troba errors, el job falla fins que el codi estigui net.
 
 Preparem el YML:
 
-![Image Lintern YML](img\1.png)
+![Image Lintern YML](img/1.png)
 
 Realitzem un comit i un pull:(esta fet desde el VSCODE)
 
@@ -61,22 +61,22 @@ Realitzem un comit i un pull:(esta fet desde el VSCODE)
 
 Veiem en les actions del projectre com s'ejecuten:
 
-![Image Lintern YML](img\2.png)
+![Image Lintern YML](img/2.png)
 
 Si hi ha algún error el mostrará:
 
-![Image Lintern YML](img\5.png)
+![Image Lintern YML](img/5.png)
 
 Despres cal corregir els errors identificats:
 en aquest cas era les comes simples i el default.
 
-![Image Lintern YML](img\6.png) 
+![Image Lintern YML](img/6.png) 
 
-![Image Lintern YML](img\7.png)
+![Image Lintern YML](img/7.png)
 
 Fins que ens done un Job en verd:
 
-![Image Lintern YML](img\8.png)
+![Image Lintern YML](img/8.png)
 
 
 ### 2️⃣ Cypress_job (1,5 punts)
@@ -85,19 +85,19 @@ En cas d’error, el job continua (gràcies a `continue-on-error: true`) i desa 
 
 Començarem per afegir el job al archiu yml:
 
-![Image Lintern YML](img\9.png)
+![Image Lintern YML](img/9.png)
 
 Cal tenir molta cura de les tabulacions:
 
 Comprobem que el job s'executa:
 
-![Image Lintern YML](img\10.png)
+![Image Lintern YML](img/10.png)
 
-![Image Lintern YML](img\11.png)
+![Image Lintern YML](img/11.png)
 
 I veiem com se crea baix dels jobs, en la navegacio de la pagina de Github Actions e, result.txt.
 
-![Image Lintern YML](img\12.png)
+![Image Lintern YML](img/12.png)
 
 
 
@@ -111,24 +111,24 @@ Inclou una acció pròpia (`.github/actions/add-badge/`) escrita en Node.js que 
 
 Creem les carpetes necesaries:
 
-![Image Lintern YML](img\14.png)
+![Image Lintern YML](img/14.png)
 
 Despres realitzem el codi del YML i del Index.js:
 
-![Image Lintern YML](img\17.png)![Image Lintern YML](img\18.png)
+![Image Lintern YML](img/17.png)![Image Lintern YML](img/18.png)
 
 En aquest cas, estaba realitzant un user a una carpeta erronea.
 
-![Image Lintern YML](img\15.png)![Image Lintern YML](img\16.png)
+![Image Lintern YML](img/15.png)![Image Lintern YML](img/16.png)
 
 USES: ./.github/actions/add-badge
 
-![Image Lintern YML](img\19.png)
+![Image Lintern YML](img/19.png)
 
 Si tot va bé:
 
-![Image Lintern YML](img\20.png)
-![Image Lintern YML](img\21.png)
+![Image Lintern YML](img/20.png)
+![Image Lintern YML](img/21.png)
 
 
 ### 4️⃣ Deploy_job (1,5 punts)
@@ -140,7 +140,7 @@ Utilitza tres secrets configurats al repositori:
 
 Apliquem un nou job, per a realitzar el deploy:
 
-![Image Lintern YML](img\30.png)
+![Image Lintern YML](img/30.png)
 
 ![Image Lintern YML](img/22.png)
 
@@ -163,17 +163,17 @@ Utilitza una acció pròpia (`.github/actions/send-notification/`) que llegeix l
 
 Exemple de missatge enviat:
 
-![Image Lintern YML](img\31.png)
+![Image Lintern YML](img/31.png)
 
 Creem un index on genenrem el cos del email.
 
-![Image Lintern YML](img\32.png)
+![Image Lintern YML](img/32.png)
 
 I a la vegada el YML:
 
-![Image Lintern YML](img\33.png)
+![Image Lintern YML](img/33.png)
 
-![Image Lintern YML](img\34.png)
+![Image Lintern YML](img/34.png)
 ---
 
 ## 📊 Extensió: Mètriques del perfil (1,5 punts)
@@ -183,13 +183,13 @@ A més, s’ha configurat una acció independent al repositori personal (`XaviPe
 Aquest panell s’actualitza setmanalment i mostra els llenguatges més utilitzats i l’activitat recent del compte de GitHub.
 
 
-![Image Lintern YML](img\35.png)
+![Image Lintern YML](img/35.png)
 
-![Image Lintern YML](img\36.png)
+![Image Lintern YML](img/36.png)
 
-![Image Lintern YML](img\37.png)
+![Image Lintern YML](img/37.png)
 
-![Image Lintern YML](img\38.png)
+![Image Lintern YML](img/38.png)
 ---
 
 
