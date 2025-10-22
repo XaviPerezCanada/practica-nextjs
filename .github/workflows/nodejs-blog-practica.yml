@@ -82,7 +82,7 @@ jobs:
         run: echo "::set-output name=cypress_outcome::$(cat result.txt)"
 
       - name: Add test badge to README
-        uses: ./github/actions/add-badge
+        uses: ././github/actions/add-badge
         with:
           outcome: ${{ steps.read_result.outputs.cypress_outcome }}
 
