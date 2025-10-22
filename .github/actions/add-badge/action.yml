@@ -1,0 +1,9 @@
+name: Add Cypress Badge
+description: Add a success or failure badge to README based on Cypress test results
+inputs:
+  outcome:
+    description: "Cypress test outcome"
+    required: true
+runs:
+  using: "node20"
+  main: "index.js"

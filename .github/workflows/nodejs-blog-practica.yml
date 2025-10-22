@@ -65,3 +65,34 @@ jobs:
         with:
           name: cypress-result
           path: result.txt
+
+  add_badge_job:
+  name: Add Cypress badge to README
+  needs: cypress_job
+  runs-on: ubuntu-latest
+
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Download Cypress result artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: cypress-result
+
+    - name: Read Cypress outcome
+      id: read_result
+      run: echo "::set-output name=cypress_outcome::$(cat result.txt)"
+
+    - name: Add test badge to README
+      uses: ./github/actions/add-badge
+      with:
+        outcome: ${{ steps.read_result.outputs.cypress_outcome }}
+
+    - name: Commit and push README update
+      run: |
+        git config user.name "github-actions"
+        git config user.email "actions@github.com"
+        git add README.md
+        git commit -m "Update Cypress test badge"
+        git push
