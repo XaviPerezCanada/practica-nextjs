@@ -79,7 +79,7 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add README.md
-          git commit -m "Update Cypress test badge"
+          git diff --cached --quiet || git commit -m "Update Cypress test badge"
           git push
 
   deploy_job:
@@ -99,4 +99,3 @@ jobs:
           vercel-project-id: ${{ secrets.PROJECT_ID }}
           working-directory: ./
           prod: true
-        
