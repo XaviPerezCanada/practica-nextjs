@@ -1,8 +1,4 @@
 
-RESULTAT DELS ÚLTIMS TESTS
-![Cypress Success](https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg)
-
-
 
 # 🧠 Pràctica GitHub Actions — Next.js Blog
 
@@ -196,12 +192,6 @@ Aquest panell s’actualitza setmanalment i mostra els llenguatges més utilitza
 ![Image Lintern YML](img\38.png)
 ---
 
-## 📜 RESULTAT DELS ÚLTIMS TESTS
-
----
-
-## ✅ Exemple de resultat esperat
-![Cypress Success](https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg)
 
 ---
 
@@ -229,5 +219,12 @@ El resultat és un procés totalment automatitzat que garanteix la qualitat i la
 | Notification | Envia un correu amb el resum | ✅ |
 
 ---
+
+## 📜 RESULTAT DELS ÚLTIMS TESTS
+
+---
+
+## ✅ Exemple de resultat esperat
+![Cypress Success](https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg)
 
 
