@@ -104,8 +104,8 @@ I veiem com se crea baix dels jobs, en la navegacio de la pagina de Github Actio
 ### 3️⃣ Add_badge_job (2 punts)
 Recupera el resultat del Cypress i actualitza automàticament el `README.md`, afegint un **badge** indicant si els tests han passat o no:
 
-- ✅ Success: ![Cypress Success](https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg)
-- ❌ Failure: ![Cypress Failure](https://img.shields.io/badge/test-failure-red)
+- ✅ Success: 
+- ❌ Failure: 
 
 Inclou una acció pròpia (`.github/actions/add-badge/`) escrita en Node.js que modifica el fitxer.
 
@@ -221,10 +221,4 @@ El resultat és un procés totalment automatitzat que garanteix la qualitat i la
 ---
 
 ## 📜 RESULTAT DELS ÚLTIMS TESTS
-
----
-
-## ✅ Exemple de resultat esperat
 ![Cypress Success](https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg)
-
-
