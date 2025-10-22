@@ -13,16 +13,13 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
-
       - name: Install dependencies
         run: npm ci
-
       - name: Run linter
         run: npm run lint
 
@@ -35,16 +32,13 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
-
       - name: Install dependencies
         run: npm ci
-
       - name: Run Cypress tests
         id: cypress
         uses: cypress-io/github-action@v6
@@ -53,10 +47,8 @@ jobs:
           start: npm start
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 60
-
       - name: Save Cypress result
         run: echo "${{ steps.cypress.outcome }}" > result.txt
-
       - name: Upload Cypress result artifact
         uses: actions/upload-artifact@v4
         with:
@@ -71,21 +63,17 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
       - name: Download Cypress result artifact
         uses: actions/download-artifact@v4
         with:
           name: cypress-result
-
       - name: Read Cypress outcome
         id: read_result
         run: echo "cypress_outcome=$(cat result.txt)" >> $GITHUB_OUTPUT
-
       - name: Add test badge to README
         uses: ./.github/actions/add-badge
         with:
           outcome: ${{ steps.read_result.outputs.cypress_outcome }}
-
       - name: Commit and push README update
         run: |
           git config user.name "github-actions"
@@ -93,3 +81,22 @@ jobs:
           git add README.md
           git commit -m "Update Cypress test badge"
           git push
+
+  deploy_job:
+    name: Deploy to Vercel
+    needs: cypress_job
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v20
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.ORG_ID }}
+          vercel-project-id: ${{ secrets.PROJECT_ID }}
+          working-directory: ./
+          prod: true
+        

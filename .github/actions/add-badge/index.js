@@ -8,10 +8,10 @@ const failureBadge = "![Cypress Failure](https://img.shields.io/badge/test-failu
 
 let content = fs.readFileSync(readmePath, "utf8");
 
-// Elimina badges anteriors si n'hi ha
+
 content = content.replace(/!\[Cypress (Success|Failure)\]\([^)]+\)/g, "");
 
-// Afegeix el badge nou després del text “RESULTAT DELS ÚLTIMS TESTS”
+
 if (content.includes("RESULTAT DELS ÚLTIMS TESTS")) {
   content = content.replace(/RESULTAT DELS ÚLTIMS TESTS.*/s, `RESULTAT DELS ÚLTIMS TESTS\n${outcome === "success" ? successBadge : failureBadge}`);
 } else {
